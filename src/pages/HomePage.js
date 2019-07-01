@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { getAction, connect } from '../services/reduxBreeze';
 
 import Layout from '../components/Layout/Layout';
 
-class HomePage extends Component {
-  static propTypes = {};
-
-  render() {
-    return (
-      <Layout
-        sider={<div>Sidebar</div>}
-        breadcrumbs={['Home']}
-      >
-        Lorem ipsum home page
-      </Layout>
-    );
-  }
-}
+const HomePage = () => (
+  <Layout
+    sider={<div>Sidebar</div>}
+    breadcrumbs={['Home']}
+  >
+    Lorem ipsum home page
+  </Layout>
+);
 
 export default connect(
   {

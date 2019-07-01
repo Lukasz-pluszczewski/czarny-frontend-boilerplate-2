@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
 import notification from '../services/notificationService';
 import { getAction, connect } from '../services/reduxBreeze';
 
 import Layout from '../components/Layout/Layout';
 
-class ExamplePage extends Component {
-  static propTypes = {
-  };
+const ExamplePage = () => {
+  useEffect(() => {
+    notification.success('Component mounted!');
+    return () => notification.error('Component will unmount!');
+  }, []);
 
-  componentDidMount() {
-    notification.success('Component mounted!')
-  }
-
-  componentWillUnmount() {
-    notification.error('Component will unmount!');
-  }
-
-  render() {
-    return (
-      <Layout
-        breadcrumbs={['Home', 'Example']}
-      >
-        Lorem ipsum
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout
+      breadcrumbs={['Home', 'Example']}
+    >
+      Lorem ipsum
+    </Layout>
+  );
+};
 
 export default connect(
   {

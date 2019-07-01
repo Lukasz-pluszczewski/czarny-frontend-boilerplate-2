@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
 
 import Layout from '../Layout/Layout';
@@ -6,26 +6,25 @@ import { Icon } from 'antd';
 
 import './Loading.scss';
 
-class Loading extends Component {
-  static propTypes = {
-    withLayout: PropTypes.bool,
-  };
+const Loading = ({ withLayout }) => {
+  const loadingIcon = (
+    <div className="LoadingIcon__iconContainer">
+      <Icon className="LoadingIcon__icon" type="loading" />
+    </div>
+  );
 
-  render() {
-    const loadingIcon = (
-      <div className="LoadingIcon__iconContainer">
-        <Icon className="LoadingIcon__icon" type="loading" />
-      </div>
+  if (withLayout) {
+    return (
+      <Layout>
+        {loadingIcon}
+      </Layout>
     );
-    if (this.props.withLayout) {
-      return (
-        <Layout>
-          {loadingIcon}
-        </Layout>
-      );
-    }
-    return loadingIcon;
   }
-}
+  return loadingIcon;
+};
+
+Loading.propTypes = {
+  withLayout: PropTypes.bool,
+};
 
 export default Loading;
