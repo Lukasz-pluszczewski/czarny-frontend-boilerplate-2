@@ -1,8 +1,5 @@
 $maincolor: #ffffff;
 
-$red: #ff4d4f;
-$green: #4caf50;
-
 // breakpoints
 $mobileRes: 768px;
 $tabletRes: 992px;
@@ -37,8 +34,5 @@ $largeMonitor: (min-width: $monitorRes);
   }
 }
 
-@mixin mobileDrawerMedia {
-  @media #{$mobileDrawerQuery} {
-    @content;
-  }
-}
+// bootstrap overrides
+//$primary: #3937ff;

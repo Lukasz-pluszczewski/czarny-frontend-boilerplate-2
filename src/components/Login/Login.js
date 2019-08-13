@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Layout from '../Layout/Layout';
-import { Input, Button, Card } from 'antd';
-
 import './Login.scss';
 
 const Login = ({ children }) => {
@@ -21,16 +18,10 @@ const Login = ({ children }) => {
   }
 
   return (
-    <Layout
-      breadcrumbs={['Login']}
-    >
-      <div className="Login">
-        <Card className="Login__card">
-          <Input className="Login__input" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
-          <Button className="Login__button" type="primary" onClick={handleSave}>Save</Button>
-        </Card>
-      </div>
-    </Layout>
+    <div className="Login">
+      <input className="Login__input" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+      <button className="Login__button" type="primary" onClick={handleSave}>Save</button>
+    </div>
   );
 };
 
