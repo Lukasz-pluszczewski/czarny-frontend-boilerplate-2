@@ -4,9 +4,9 @@ import './index.css';
 import './styles/index.scss';
 import App from './components/App/App';
 
-if (process.env.REACT_APP_ENV !== 'production' && process.env.REACT_APP_WHYUPDATE === 'true') {
-  const { whyDidYouUpdate } = require('why-did-you-update');
-  whyDidYouUpdate(React);
+if (process.env.NODE_ENV !== 'production') {
+  const whyDidYouRender = require('@welldone-software/why-did-you-render');
+  whyDidYouRender(React);
 }
 
 ReactDOM.render(
